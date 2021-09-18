@@ -25,9 +25,9 @@
                 $(".login").css("background", "#d3d3d3");
             });
 
-            $(".btn").click(function(){
-                $(".input").val("");
-            })
+            // $(".btn").click(function(){
+            //     $(".input").val("");
+            // })
         })
     </script>
 </head>
@@ -42,16 +42,16 @@
             <div class="signup">Sign Up</div>
 
             <div class="signup-form">
-                <input type="text" placeholder="Enter Username" class="input"><br>
-                <input type="text" placeholder="Enter Email" class="input"> <br>
-                <input type="password" placeholder="Enter Password" class="input">
+                <input id="signup-username" type="text" placeholder="Enter Username" class="input"><br>
+                <input id="signup-email" type="text" placeholder="Enter Email" class="input"> <br>
+                <input id="signup-password" type="password" placeholder="Enter Password" class="input">
                 <div class="btn">Create Account</div>
             </div>
 
             <div class="login-form">
                 <input type="text" placeholder="Enter Email or Username" class="input"><br>
                 <input type="password" class="input" placeholder="Enter Password"><br>
-                <div class="btn">Login</div> <br>
+                <button class="btn">Login</button>
                 <span><a href="#">Forgot Password?</a></span>
             </div>
         </div>
@@ -83,15 +83,8 @@
         const analytics = getAnalytics(app);
 
         const auth = getAuth();
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredntial) => {
-                const user = userCredential.user;
-            })
-            .catch((error) => {
-                const errorCoe = error.code;
-                const errorMessage = error.message;
-            });
       </script>
+      <script src="auth.js"></script>
     </body>
     <footer>
 

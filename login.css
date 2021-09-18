@@ -1,5 +1,5 @@
 body {
-  background: lightblue;
+  background: #add8e6;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -60,4 +60,11 @@ body {
   letter-spacing: 1px;
   border-radius: 10px;
   cursor: pointer;
+  border: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #84cfc3;
+  transition: all 0.5s ease-in-out;
 }

@@ -7,25 +7,55 @@
     <title>Recycle PG</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".login-form").hide();
+            $(".login").css("background", "#d3d3d3");
+            $(".login").click(function(){
+                $(".signup-form").hide();
+                $(".login-form").show();
+                $(".signup").css("background", "#d3d3d3");
+                $(".login").css("background", "#fff");
+            });
+            $(".signup").click(function(){
+                $(".login-form").hide();
+                $(".signup-form").show();
+                $(".signup").css("background", "#fff");
+                $(".login").css("background", "#d3d3d3");
+            });
+
+            $(".btn").click(function(){
+                $(".input").val("");
+            })
+        })
+    </script>
 </head>
 
 <body>
 <div class = "outside">
     <nav>
-
     </nav>
     <body>
-        <form>
-           <div class="container">
-               <label for="username"><b>Username</b></label>
-               <input type="text" placeholder="Enter Username" name="username" required>
+        <div class="container">
+            <div class="login">Login</div>
+            <div class="signup">Sign Up</div>
 
-               <label for="password"><b>Password</b></label>
-               <input type="password" placeholder="Enter Password" name="password" requried>
+            <div class="signup-form">
+                <input type="text" placeholder="Enter Username" class="input"><br>
+                <input type="text" placeholder="Enter Email" class="input"> <br>
+                <input type="password" placeholder="Enter Password" class="input">
+                <div class="btn">Create Account</div>
+            </div>
 
-               <button type="submit">Login</button>
-           </div>
-        </form>
+            <div class="login-form">
+                <input type="text" placeholder="Enter Email or Username" class="input"><br>
+                <input type="password" class="input" placeholder="Enter Password"><br>
+                <div class="btn">Login</div> <br>
+                <span><a href="#">Forgot Password?</a></span>
+            </div>
+        </div>
+
     </body>
     <footer>
 

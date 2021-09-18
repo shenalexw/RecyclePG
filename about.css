@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*------------------ DO NOT TOUCH------------------*/
+nav {
+    background-color: #b2d481;
+    height: 150px;
+    width: 100%;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color: #495867;
+    height: 100px;
+    width: 100%;
+}

@@ -24,10 +24,6 @@
                 $(".signup").css("background", "#fff");
                 $(".login").css("background", "#d3d3d3");
             });
-
-            // $(".btn").click(function(){
-            //     $(".input").val("");
-            // })
         })
     </script>
 </head>
@@ -41,19 +37,18 @@
             <div class="login">Login</div>
             <div class="signup">Sign Up</div>
 
-            <div class="signup-form">
+            <form class="signup-form">
                 <input id="signup-username" type="text" placeholder="Enter Username" class="input"><br>
                 <input id="signup-email" type="text" placeholder="Enter Email" class="input"> <br>
                 <input id="signup-password" type="password" placeholder="Enter Password" class="input">
-                <div class="btn">Create Account</div>
-            </div>
-
-            <div class="login-form">
+                <button type="submit" class="btn">Create Account</button>
+            </form>
+            <form class="login-form">
                 <input type="text" placeholder="Enter Email or Username" class="input"><br>
                 <input type="password" class="input" placeholder="Enter Password"><br>
                 <button class="btn">Login</button>
                 <span><a href="#">Forgot Password?</a></span>
-            </div>
+            </form>
         </div>
 
 
@@ -84,7 +79,7 @@
 
         const auth = getAuth();
       </script>
-      <script src="auth.js"></script>
+      <script src="./scripts/auth.js"></script>
     </body>
     <footer>
 

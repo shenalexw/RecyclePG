@@ -1,5 +1,5 @@
 // signup
-const signupForm = document.querySelector('#signup-form');
+const signupForm = document.querySelector('.signup-form');
 signupForm.addEventListener('submit', (event) => {
   event.preventDefault();
   // get user info
@@ -7,5 +7,6 @@ signupForm.addEventListener('submit', (event) => {
   const username = signupForm['signup-username'].value;
   const password = signupForm['signup-password'].value;
 
-  console.log(email, password);
+  // test if the input works
+  // console.log(username, email, password);
 })

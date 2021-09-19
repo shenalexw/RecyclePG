@@ -45,19 +45,23 @@ document.getElementById("attack_button").addEventListener("click", function(even
     // If any of the levels are > 5, then a 2x multiplyer is added
     if (cans > 5 || bottles > 5 || reuse > 5 || paper > 5 || ewaste > 5){
         multiplyer += 5;
-        message = "-------- Wow, what a powerful move that was! --------"
+        message = "-------- Wow, what a powerful move that was! --------";
     }
 
     // If all of the levels are > 5, then a 5x multiplyer is added
-    if (cans > 5 && bottles > 5 && reuse > 5 && paper > 5 && ewaste > 5){
+    else if (cans > 5 && bottles > 5 && reuse > 5 && paper > 5 && ewaste > 5){
         multiplyer += 10;
-        message = "-------- This can't Be!!!!!!!!!!!!!!!!!!!!! --------"
+        message = "-------- This can't Be!!!!!!!!!!!!!!!!!!!!! --------";
     }
 
     // If all of the levels are > 5, then a 5x multiplyer is added
-    if (cans == 0 && bottles == 0 && reuse == 0 && paper == 0 && ewaste == 0){
+    else if (cans == 0 && bottles == 0 && reuse == 0 && paper == 0 && ewaste == 0){
         multiplyer == 0;
-        message = "-------- What a pathetic excuse of a human! --------"
+        message = "-------- What a pathetic excuse of a human! --------";
+    }
+
+    else {
+        message = "------------- You call that an attack! -------------";
     }
     
     // Add up all the recycling 

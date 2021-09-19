@@ -78,8 +78,28 @@
         const analytics = getAnalytics(app);
 
         const auth = getAuth();
+
+        const signupForm = document.querySelector('.signup-form');
+        signupForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            // get user info
+            const email = signupForm['signup-email'].value;
+            const username = signupForm['signup-username'].value;
+            const password = signupForm['signup-password'].value;
+
+            // sign that user up!
+            const auth = getAuth();
+            createUserWithEmailAndPassword(email, username, password)
+            .then((cred) => {
+                console.log(cred.user);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            })
+        })
       </script>
-      <script src="./scripts/auth.js"></script>
+      <!-- <script src="./scripts/auth.js"></script> -->
     </body>
     <footer>
 

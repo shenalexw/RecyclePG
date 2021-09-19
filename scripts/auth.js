@@ -9,4 +9,11 @@ signupForm.addEventListener('submit', (event) => {
 
   // test if the input works
   // console.log(username, email, password);
+  auth = getAuth();
+  auth.createUserWithEmailAndPassword(email, username, password)
+  .then(cred => {
+      console.log(cred);
+   })
+  // sign that user up!
+
 })

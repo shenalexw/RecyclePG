@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    position: relative;
+    min-height: 100vh;
+}
 
 /*------------------ NAV ------------------*/
 nav {
@@ -115,27 +119,14 @@ footer a:visited {
 }
 
 
-@media(max-width: 500px) {
-    .firstbox, .secondbox, .thirdbox, .fourthbox {
-        width: 10%;
-        height: 10%;
-    }
-}
-
-
-
-
-.firstbox {
+.box {
     height: 250px;
-    width: 23%;
+    width: 330px;
     background-color:gray;
-    margin-left: 25%;
-    margin-top: 3%;
-    float: left;
-
+    margin: 10px;
 }
 
-.firstbox img{
+.box img{
     border: 1px solid;
     border-radius: 4px;
     width: 100px;
@@ -146,140 +137,16 @@ footer a:visited {
     top: 5%;
 }
 
-.firstbox h1{
+.box h1{
     text-align: center;
     margin-top: 20px;
 }
 
-.firstbox p{
+.box p{
     text-align: center;
 }
 
-.firstbox a{
-    background-color: lightgray;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    height: 15%;
-    width: 30%;
-    margin: 0 auto;
-    margin-top: 10px;
-}
-
-.secondbox{
-    height: 250px;
-    width: 23%;
-    background-color:gray;
-    margin-right: 25%;
-    margin-top: 3%;
-    float: right;
-}
-
-.secondbox img{
-    border: 1px solid;
-    border-radius: 4px;
-    width: 100px;
-    height: 100px;
-    border-radius: 4px;
-    position: relative;
-    left: 33%;
-    top: 5%;
-}
-
-.secondbox h1{
-    text-align: center;
-    margin-top: 20px;
-}
-
-.secondbox p{
-    text-align: center;
-}
-
-.secondbox a{
-    background-color: lightgray;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    height: 15%;
-    width: 30%;
-    margin: 0 auto;
-    margin-top: 10px;
-}
-
-.thirdbox{
-    height: 250px;
-    width: 23%;
-    background-color: gray;
-    margin-left: 25%;
-    margin-top: 2%;
-    float: left;
-}
-
-.thirdbox img{
-    border: 1px solid;
-    border-radius: 4px;
-    width: 100px;
-    height: 100px;
-    border-radius: 4px;
-    position: relative;
-    left: 33%;
-    top: 5%;
-}
-
-.thirdbox h1{
-    text-align: center;
-    margin-top: 20px;
-}
-
-.thirdbox p{
-    text-align: center;
-}
-
-.thirdbox a{
-    background-color: lightgray;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    height: 15%;
-    width: 30%;
-    margin: 0 auto;
-    margin-top: 10px;
-}
-
-
-.fourthbox{
-    height: 250px;
-    width: 23%;
-    background-color: gray;
-    margin-right: 25%; 
-    margin-top: 2%; 
-    float: right;
-}
-
-.fourthbox img{
-    border: 1px solid;
-    border-radius: 4px;
-    width: 100px;
-    height: 100px;
-    border-radius: 4px;
-    position: relative;
-    left: 33%;
-    top: 5%;
-}
-
-.fourthbox h1{
-    text-align: center;
-    margin-top: 20px;
-}
-
-.fourthbox p{
-    text-align: center;
-}
-
-.fourthbox a{
+.box a{
     background-color: lightgray;
     padding: 10px 10px;
     text-align: center;
@@ -296,4 +163,10 @@ a:hover, a:active {
     color: white;
 }
 
+.outside{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
 

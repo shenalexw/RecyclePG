@@ -14,7 +14,7 @@ body{
 /*------------------ NAV ------------------*/
 nav {
     font-family: Roboto, sans-serif;
-    background-color: #b2d481;
+    background-color: rgb(178, 212, 129);
     height: 100px;
     width: 100%;
     z-index: 0;
@@ -39,17 +39,15 @@ nav li a {
     transition-duration: 0.4s;
 }
 nav li a:hover {
-    background-color: #77d17a;
+    background-color: rgb(119, 209, 122, .6);
 }
 
 nav a:link {
     color: black;
-    background-color: transparent;
     text-decoration: none;
 }
 nav a:visited {
     color: black;
-    background-color: transparent;
     text-decoration: none;
 }
 
@@ -59,7 +57,7 @@ nav a:visited {
     transition-duration: 0.4s;
     padding: 0px 30px;
     block-size: 100px;
-    background-color: #b2d481;
+    background-color: rgb(178, 212, 129, 0);
     font-size: 16px;
     border: none;
 }
@@ -86,13 +84,14 @@ nav a:visited {
 }
 .dropdown-content a:hover {background-color: #ddd;}
 .dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbutton {background-color: #77d17a}
+.dropdown:hover .dropbutton {background-color: rgb(119, 209, 122, .6)}
+
 
 /*------------------ Footer ------------------*/
 footer{
     position: absolute;
     bottom: 0;
-    background-color: #495867;
+    background-color: rgb(73, 88, 103,.9);
     height: 100px;
     width: 100%;
 }
@@ -109,11 +108,9 @@ footer{
 
 footer a:link {
     color: white;
-    background-color: transparent;
 }
 footer a:visited {
     color: white;
-    background-color: transparent;
 }
 
 /*------------------ Game  ------------------*/

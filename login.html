@@ -36,7 +36,7 @@
                 <li><a style="float:right;" href="index.html">Home</a></li>
                 <li><a style="float:right;" href="game.html">Play Now</a></li>
                 <li><a style="float:right;" href="about.html">About</a></li>
-                <li class="logged-in" id="logout"><a style="float:right"; href="#">Logout</a></li>
+                <li class="logout-button" id="logout"><a style="float:right"; href="#">Logout</a></li>
                 <div style="float:right;" class="dropdown">
                     <button class="dropbutton">Community</button>
                     <div class="dropdown-content">
@@ -61,7 +61,7 @@
             <form class="login-form">
                 <input id="login-email" type="text" placeholder="Enter Email" class="input"><br>
                 <input id="login-password" type="password" class="input" placeholder="Enter Password"><br>
-                <button type="submit" class="btn">Login</button>
+                <button id="login-submit" type="submit" class="btn">Login</button>
                 <span><a href="#">Forgot Password?</a></span>
             </form>
         </div>
@@ -72,7 +72,11 @@
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-analytics.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js";
+        import { getAuth,
+                 createUserWithEmailAndPassword,
+                signInWithEmailAndPassword,
+                signOut,
+                onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -91,8 +95,11 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
+        const auth = getAuth();
 
+        // in the document, find the signup form
         const signupForm = document.querySelector('.signup-form');
+        // when the submit button has been hit, perform the following steps
         signupForm.addEventListener('submit', (event) => {
             event.preventDefault();
             // get user info
@@ -100,20 +107,47 @@
             const signupUsername = signupForm['signup-username'].value;
             const signupPassword = signupForm['signup-password'].value;
 
-            // sign that user up!
-            const auth = getAuth();
+            // save signed up user to authentication database in firebase
             createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
+            // if successful, display user on the console
             .then((cred) => {
                 console.log(cred.user);
             })
+            // otherwise throw an error
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
             });
         })
 
+        // check for authentication status
+        onAuthStateChanged(auth, (user) => {
+            // console.log(user);
+
+            // if the user has logged in, do something here
+            if (user) {
+                console.log('User logged in: ', user.email);
+                const hideLogout = document.getElementById('.login-submit');
+                // TODO: Fix this to hide logout in navbar once useer is logged in
+                // hideLogout.addEventListener('click', (event)=>{
+                //     hideLogout
+                // })
+
+            // otherwise, display on the console that no user has not logged in
+            } else {
+                console.log('No user logged in');
+            }
+        })
+
+        // log user out if logout button has been hit
+        const logout = document.querySelector('#logout');
+        logout.addEventListener('click', (event) => {
+            event.preventDefault();
+            signOut(auth);
+        })
+
         // login
-        const loginForm = document.querySelector('.signup-form');
+        const loginForm = document.querySelector('.login-form');
         loginForm.addEventListener('submit', (event)=>{
             event.preventDefault();
             // get login information
@@ -122,7 +156,7 @@
 
             signInWithEmailAndPassword(auth, email, password)
             .then((cred) => {
-                console.log("Login Successful");
+                console.log(cred.user);
             })
             .catch((error)=>{
                 const errorCode = error.code;

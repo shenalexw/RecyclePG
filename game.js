@@ -33,7 +33,7 @@ function updateCloud(life){
 // Attack the boss
 document.getElementById("attack_button").addEventListener("click", function(event){
     let multiplyer = 1;
-    let message;
+    let message = "-------- I will flood the streets with rage! --------";
 
     // Gather the points
     let cans = parseInt(document.getElementById('cans').value);

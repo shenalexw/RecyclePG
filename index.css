@@ -69,7 +69,6 @@ nav a:visited {
     text-decoration: none;
 }
 
-
 /*------------------ Community Button ------------------*/
 .dropbutton {
     transition-duration: 0.4s;
@@ -131,5 +130,8 @@ footer a:visited {
     color: white;
 }
 
-
-  
+/*------------------ Responsiveness ------------------*/
+@media only screen and (max-width: 1000px) { #community{display: none;} }
+@media only screen and (max-width: 860px) { #about{display: none;} }
+@media only screen and (max-width: 720px) { #login{display: none;} }
+@media only screen and (max-width: 550px) { #title{display: none;} }

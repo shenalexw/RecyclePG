@@ -61,7 +61,7 @@
             <form class="login-form">
                 <input id="login-email" type="text" placeholder="Enter Email" class="input"><br>
                 <input id="login-password" type="password" class="input" placeholder="Enter Password"><br>
-                <button type="submit" class="btn">Login</button>
+                <button id="login-submit" type="submit" class="btn">Login</button>
                 <span><a href="#">Forgot Password?</a></span>
             </form>
         </div>
@@ -72,7 +72,7 @@
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-analytics.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -91,7 +91,7 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
-
+        const auth = getAuth();
         const signupForm = document.querySelector('.signup-form');
         signupForm.addEventListener('submit', (event) => {
             event.preventDefault();
@@ -101,7 +101,6 @@
             const signupPassword = signupForm['signup-password'].value;
 
             // sign that user up!
-            const auth = getAuth();
             createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
             .then((cred) => {
                 console.log(cred.user);
@@ -112,8 +111,17 @@
             });
         })
 
+        //logout
+        const logout = document.querySelector('#logout');
+        logout.addEventListener('click', (event) => {
+            event.preventDefault();
+            signOut(auth).then(()=> {
+                console.log('logged out');
+            })
+        })
+
         // login
-        const loginForm = document.querySelector('.signup-form');
+        const loginForm = document.querySelector('.login-form');
         loginForm.addEventListener('submit', (event)=>{
             event.preventDefault();
             // get login information
@@ -122,7 +130,7 @@
 
             signInWithEmailAndPassword(auth, email, password)
             .then((cred) => {
-                console.log("Login Successful");
+                console.log(cred.user);
             })
             .catch((error)=>{
                 const errorCode = error.code;

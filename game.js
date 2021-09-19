@@ -1,3 +1,9 @@
+import firebaseConfig from "./config.js";
+
+
+// const app = initializeApp(firebaseConfig);
+// const auth = getAuth();
+
 let logged = 1;
 let health = 50000;// Change this one to update based on database health
 let startstring = "-------- I will flood the streets with rage! --------"
@@ -11,7 +17,7 @@ function updateLife(life){
     }
     document.getElementById('num_health').innerHTML
         = health;
-    
+
 }
 
 // Update the source of the image based on the given health.
@@ -59,8 +65,8 @@ document.getElementById("attack_button").addEventListener("click", function(even
         multiplyer == 0;
         message = "-------- What a pathetic excuse of a human! --------"
     }
-    
-    // Add up all the recycling 
+
+    // Add up all the recycling
     let total = cans + bottles + reuse + paper + ewaste;
     let final = total * multiplyer;
     let temp_health = health - final;
@@ -70,7 +76,7 @@ document.getElementById("attack_button").addEventListener("click", function(even
     updateCloud(temp_health);
     updateMessage(message);
 
-    // If Cans and bottles are 
+    // If Cans and bottles are
     event.preventDefault();
 });
 
@@ -88,3 +94,21 @@ function logDisplay(check) {
 logDisplay(logged);
 updateLife(health);
 updateCloud(health);
+
+onAuthStateChanged(auth, (user) => {
+    // console.log(user);
+
+    // if the user has logged in, do something here
+    if (user) {
+        console.log('User logged in: ', user.email);
+        const hideLogout = document.getElementById('.login-submit');
+        // TODO: Fix this to hide logout in navbar once useer is logged in
+        // hideLogout.addEventListener('click', (event)=>{
+        //     hideLogout
+        // })
+
+    // otherwise, display on the console that no user has not logged in
+    } else {
+        console.log('No user logged in');
+    }
+});

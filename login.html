@@ -96,7 +96,10 @@
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
         const auth = getAuth();
+
+        // in the document, find the signup form
         const signupForm = document.querySelector('.signup-form');
+        // when the submit button has been hit, perform the following steps
         signupForm.addEventListener('submit', (event) => {
             event.preventDefault();
             // get user info
@@ -104,11 +107,13 @@
             const signupUsername = signupForm['signup-username'].value;
             const signupPassword = signupForm['signup-password'].value;
 
-            // sign that user up!
+            // save signed up user to authentication database in firebase
             createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
+            // if successful, display user on the console
             .then((cred) => {
                 console.log(cred.user);
             })
+            // otherwise throw an error
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -121,13 +126,15 @@
 
             // if the user has logged in, do something here
             if (user) {
-                console.log('user logged in: ', user.email)
+                console.log('User logged in: ', user.email);
+                const hideLogout = document.getElementById('login-submit');
+            // otherwise, display on the console that no user has not logged in
             } else {
-                console.log(' logged out');
+                console.log('No user logged in');
             }
         })
 
-        //logout
+        // logout
         const logout = document.querySelector('#logout');
         logout.addEventListener('click', (event) => {
             event.preventDefault();

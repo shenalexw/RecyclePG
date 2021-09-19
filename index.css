@@ -10,8 +10,8 @@ body{
     position: relative;
     min-height: 100vh;
 
-    /* background-image: url('imgs/luis-poletti-th4bqV0PQpI-unsplash.jpg'); */
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('imgs/luis-poletti-th4bqV0PQpI-unsplash.jpg');
+    background-image: url('imgs/luis-poletti-th4bqV0PQpI-unsplash.jpg');
+    /* background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('imgs/luis-poletti-th4bqV0PQpI-unsplash.jpg'); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position:bottom;
@@ -33,10 +33,9 @@ body{
 /*------------------ NAV ------------------*/
 nav {
     font-family: Roboto, sans-serif;
-    background-color: rgb(178, 212, 129,.6);
+    background-color: rgb(178, 212, 129,.85);
     height: 100px;
     width: 100%;
-    z-index: 0;
 }
 
 nav .gametitle {

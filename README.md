@@ -25,3 +25,5 @@ Live Preview: [RecyclePG](recyclepg.github.io/recyclepg/)
 #### Chhuong Le - Developer
 #### Nelson Tian - Developer
 #### Michelle Hau - Developer
+
+[Video Demo](https://drive.google.com/file/d/1HA503zuUCkQ1drlbKTM61uFEnagt_1nh/view?usp=sharing)

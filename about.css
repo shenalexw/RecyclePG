@@ -130,6 +130,7 @@ footer a:visited {
     width: 330px;
     background-color:gray;
     margin: 10px;
+    border-radius: 30px;
 }
 
 .box img{
@@ -153,7 +154,7 @@ footer a:visited {
 }
 
 .box a{
-    background-color: lightgray;
+    background-color: #b2d481;
     padding: 10px 10px;
     text-align: center;
     text-decoration: none;
@@ -162,11 +163,12 @@ footer a:visited {
     width: 30%;
     margin: 0 auto;
     margin-top: 10px;
+    border-radius: 30px;
 }
 
 a:hover, a:active {
-    background-color: #b2b2b2;
-    color: white;
+    cursor: pointer;
+    border-radius: 30px;
 }
 
 .outside{

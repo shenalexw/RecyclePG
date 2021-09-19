@@ -1,3 +1,260 @@
-.asd{
-    font-size: 50px;
+/*Apply to Everyting*/
+* {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+}
+
+/*------------------ NAV ------------------*/
+nav {
+    font-family: Roboto, sans-serif;
+    background-color: #b2d481;
+    height: 100px;
+    width: 100%;
+    z-index: 0;
+}
+
+nav .gametitle {
+    font-size: 30px;
+    float: left;
+    padding: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li a {
+    display: block;
+    block-size: 100px;
+    text-align: center;
+    padding: 40px 45px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+}
+nav li a:hover {
+    background-color: #77d17a;
+}
+
+nav a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+nav a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+
+/*------------------ Community Button ------------------*/
+.dropbutton {
+    transition-duration: 0.4s;
+    padding: 0px 30px;
+    block-size: 100px;
+    background-color: #b2d481;
+    font-size: 16px;
+    border: none;
+}
+.dropdown {
+    transition-duration: 0.4s;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 168px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbutton {background-color: #77d17a}
+
+/*------------------ Footer ------------------*/
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color: #495867;
+    height: 100px;
+    width: 100%;
+}
+
+.copyright {
+    font-family: Roboto, sans-serif;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    color: white;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+footer a:link {
+    color: white;
+    background-color: transparent;
+}
+footer a:visited {
+    color: white;
+    background-color: transparent;
+}
+
+/*------------------ Game  ------------------*/
+.outside{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.window{
+    width: 1500px;
+    height: 800px;
+    overflow: auto;
+}
+
+.stats{
+    color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 50px;
+    height: 700px;
+    width: 500px;
+    background-color: #495867;
+    border-radius: 50px;
+}
+
+.stats h1{
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.stats_content{
+    height: 600px;
+    width: 400px;
+}
+
+.stats select{
+    padding: 8px;
+    cursor: pointer;
+}
+
+.stats h2{
+    margin-bottom: 40px;
+}
+
+.stats button {
+    margin-top: 20px;
+    background-color: #b2d481; /* Green */
+    border: none;
+    color: white;
+    padding: 30px 140px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    color: black;
+    border-radius: 50px;
+}
+
+.stats button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform .5s; /* Animation */
+}
+
+.boss{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 700px;
+    height: 500px;
+    width: 700px;
+}
+
+.boss img{
+    height: 500px;
+    animation-name: hover;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+
+@keyframes hover {
+    from{
+        margin-left: 0%;
+    } to {
+        margin-left: 20%;
+    }
+}
+
+
+.health{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-left: 750px;
+    margin-top: 525px;
+    height: 50px;
+    width: 700px;
+}
+
+.message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-left: 750px;
+    margin-top: 600px;
+    height: 150px;
+    width: 700px;
+    color: #495867;
+    border: solid 3px #495867;
+}
+
+.message h1{
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto;
+    animation: typing 3.5s steps(40)
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color: #495867;
+    height: 100px;
+    width: 100%;
 }

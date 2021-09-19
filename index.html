@@ -7,20 +7,21 @@
     <title>Recycle PG</title>
     <link rel="stylesheet" type = "text/css" href="index.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
 </head>
 
 <body>
-<div class = "outside">
+<div>
     <nav>
-        <ul>
-            <b>
-            <div class="gametitle"><a id="title" href="index.html">Recycle Poggers Game</a></div>
+        <div class="gametitle"><a id="title" href="index.html">Recycle Poggers Game</a></div>
+        <!-- navbar -->
+        <ul class="navbar">
             <li><a style="float:right;" href="game.html">Play Now</a></li>
-            <li><a id="login" style="float:right;" href="login.html">Login</a></li>
-            <li><a id="about" style="float:right;" href="about.html">About</a></li>
+            <li><a style="float:right;" href="login.html">Login</a></li>
+            <li><a style="float:right;" href="about.html">About</a></li>
             <div id="community" style="float:right;" class="dropdown">
                 <button class="dropbutton">Community
                     <span style = "font-size: 14px; font-weight: bolder;" class="material-icons">expand_more</span>
@@ -31,10 +32,33 @@
                     <a href="https://www.facebook.com/" target="_blank">Facebook</a>
                 </div>
             </div>
-            </b>
-        </ul> 
+        </ul>
     </nav>
+
+    <!-- hamburger -->
+    <div class="navham">
+        <div id="myLinks">
+        <a href="about.html">About</a>
+        <a href="login.html">Login</a>
+        <a href="game.html">Play Now</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+    }
+    </script>
+
     <div class="welcometext w3-animate-opacity">Welcome to RPG, a collaborative game about saving the planet — one bottle at a time.</div>
+    
     <footer>
         <div class="copyright", style="position:relative;">
             

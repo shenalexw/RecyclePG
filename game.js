@@ -45,7 +45,7 @@ document.getElementById("attack_button").addEventListener("click", function(even
     // If any of the levels are > 5, then a 2x multiplyer is added
     if (cans > 5 || bottles > 5 || reuse > 5 || paper > 5 || ewaste > 5){
         multiplyer += 5;
-        message = "-------- Wow, what a powerful move that was! --------";
+        message = "----- Wow, what a powerful move that was! -----";
     }
 
     // If all of the levels are > 5, then a 5x multiplyer is added
@@ -86,6 +86,16 @@ function logDisplay(check) {
     }
     else {
         document.getElementById("out").style.display = "none";
+
+    }
+}
+
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
     }
 }
 

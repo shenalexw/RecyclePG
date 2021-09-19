@@ -8,19 +8,22 @@
     <link rel="stylesheet" type = "text/css" href="style.css">
     <link rel="stylesheet" type = "text/css" href="about.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
 </head>
 
 <body>
     <nav>
-        <ul>
-            <b>
-            <div class="gametitle"><a id="title" href="index.html">Recycle Poggers Game</a></div>
+        <div class="gametitle"><a id="title" href="index.html">Recycle Poggers Game</a></div>
+        <!-- navbar -->
+        <ul class="navbar">
             <li><a style="float:right;" href="game.html">Play Now</a></li>
-            <li><a id="login" style="float:right;" href="login.html">Login</a></li>
-            <li><a id="about" style="float:right;" href="about.html">About</a></li>
-            <div id="community" style="float:right;" class="dropdown">
+            <li><a style="float:right;" href="login.html">Login</a></li>
+            <li><a style="float:right;" href="about.html">About</a></li>
+            <div style="float:right;" class="dropdown">
                 <button class="dropbutton">Community
-                    <span style = "font-size: 14px; font-weight: bolder;" class="material-icons">expand_more</span>
+                    <span style = "font-size: 14px; font-weight:bolder;" class="material-icons">expand_more</span>
                 </button>
                 <div class="dropdown-content">
                     <a href="https://www.reddit.com/" target="_blank">Reddit</a>
@@ -28,9 +31,20 @@
                     <a href="https://www.facebook.com/" target="_blank">Facebook</a>
                 </div>
             </div>
-            </b>
-        </ul> 
+        </ul>
     </nav>
+
+    <!-- hamburger -->
+    <div class="navham">
+        <div id="myLinks">
+        <a href="about.html">About</a>
+        <a href="login.html">Login</a>
+        <a href="game.html">Play Now</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+        </a>
+    </div>
 
 
 
@@ -66,10 +80,13 @@
         </div>
     </div>
 
+    <div style = "padding: 70px;">
+        
+    </div>
 
 
     <footer>
-        <div class="copyright", style="position:relative;">
+        <div style = "margin-bottom: 1200px;"class="copyright", style="position:relative;">
             
         </div>
         <div class="copyright">
@@ -78,6 +95,17 @@
             <small>&copy; Copyright 2021, RPG Poggers. All Rights Reserved.</small>
         </div>
     </footer>
+
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+    }
+    </script>
 
 </body>
 </html>

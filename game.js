@@ -17,10 +17,10 @@ function updateLife(life){
 // Update the source of the image based on the given health.
 function updateCloud(life){
     if (life < 25000){
-        document.getElementById("cloud").src="/imgs/cloud_mellow.png";
+        document.getElementById("cloud").src="imgs/cloud_mellow.png";
     }
     if (life <= 0){
-        document.getElementById("cloud").src="/imgs/cloud_happy.png";
+        document.getElementById("cloud").src="imgs/cloud_happy.png";
     }
 }
 
@@ -28,14 +28,12 @@ function updateCloud(life){
     function updateMessage(sentence){
         let element =  document.getElementById("display_message")
         element.innerHTML = sentence;
-        element.classList.remove("message");
-        setTimeout(() => element.classList.add("message"), 0);
     }
 
 // Attack the boss
 document.getElementById("attack_button").addEventListener("click", function(event){
     let multiplyer = 1;
-    let message = "-------- What a pathetic Excuse of a human! --------"
+    let message;
 
     // Gather the points
     let cans = parseInt(document.getElementById('cans').value);
@@ -47,16 +45,19 @@ document.getElementById("attack_button").addEventListener("click", function(even
     // If any of the levels are > 5, then a 2x multiplyer is added
     if (cans > 5 || bottles > 5 || reuse > 5 || paper > 5 || ewaste > 5){
         multiplyer += 5;
+        message = "-------- Wow, what a powerful move that was! --------"
     }
 
     // If all of the levels are > 5, then a 5x multiplyer is added
     if (cans > 5 && bottles > 5 && reuse > 5 && paper > 5 && ewaste > 5){
         multiplyer += 10;
+        message = "-------- This can't Be!!!!!!!!!!!!!!!!!!!!! --------"
     }
 
     // If all of the levels are > 5, then a 5x multiplyer is added
     if (cans == 0 && bottles == 0 && reuse == 0 && paper == 0 && ewaste == 0){
         multiplyer == 0;
+        message = "-------- What a pathetic excuse of a human! --------"
     }
     
     // Add up all the recycling 
@@ -87,4 +88,3 @@ function logDisplay(check) {
 logDisplay(logged);
 updateLife(health);
 updateCloud(health);
-updateMessage(startstring);

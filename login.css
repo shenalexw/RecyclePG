@@ -1,8 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
+  position: relative;
+    min-height: 100vh;
   background: #add8e6;
   font-family: 'Roboto', sans-serif;
 }
 
+/*------------------ NAV ------------------*/
+nav {
+  font-family: Roboto, sans-serif;
+  background-color: rgb(178, 212, 129,.85);
+  height: 100px;
+  width: 100%;
+  font-weight: bolder;
+  z-index: 0;
+}
+
+nav .gametitle {
+  font-size: 30px;
+  float: left;
+  padding: 30px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li a {
+  display: block;
+  block-size: 100px;
+  text-align: center;
+  padding: 40px 45px;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+nav li a:hover {
+  background-color: rgb(119, 209, 122, .6);
+}
+
+nav a:link {
+  color: black;
+  text-decoration: none;
+}
+nav a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.navham {
+  z-index: 1;
+  background-color: #333;
+}
+
+
+
+.navham a {
+  font-family: Roboto, sans-serif;
+  padding: 40px 40px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.navham #myLinks {
+  display: none;
+}
+
+.navham a:link {
+  color: white;
+  text-decoration: none;
+}
+.navham a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.navham a.icon {
+  display: block;
+  position: absolute;
+  COLOR: black;
+  right: 0;
+  top: 0;
+}
+
+.navham a:hover {
+  background-color: rgb(119, 209, 122, .6);
+  color: white;
+}
+
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/*------------------ Community Button ------------------*/
+.dropbutton {
+  transition-duration: 0.4s;
+  padding: 0px 30px;
+  block-size: 100px;
+  background-color: rgb(178, 212, 129, 0);
+  font-weight: bold;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  border: none;
+}
+.dropdown {
+  transition-duration: 0.4s;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 166px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbutton {background-color: rgb(119, 209, 122, .6)}
+
+
+
+
+/*------------------ Footer ------------------*/
+footer{
+  position: absolute;
+  bottom: 0;
+  background-color: rgb(73, 88, 103,.9);
+  height: 100px;
+  width: 100%;
+}
+
+.copyright {
+  font-family: Roboto, sans-serif;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: white;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+footer a:link {
+  color: white;
+}
+footer a:visited {
+  color: white;
+}
+
+
+/*------------------ Responsiveness ------------------*/
+@media only screen and (max-width: 1000px) { .navbar {display: none;}}
+@media only screen and (min-width: 1000px) { .navham {display: none;}}
+/* @media only screen and (max-width: 1000px) { #community{display: none;} } */
+/* @media only screen and (max-width: 550px) { #title{display: none;} } */
 .container{
   width: 450px;
   height: 450px;
@@ -69,91 +234,3 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
-/* Nav stuff (Delete later) */
-
-.test {
-  margin: auto;
-  padding: auto;
-  width: 50%;
-}
-
-.bgimg {
-  position:absolute;
-}
-
-body{
-  position: relative;
-  min-height: 100vh;
-}
-
-nav {
-  font-family: Roboto, sans-serif;
-}
-
-nav ul {
-  list-style-type: none;
-  overflow: hidden;
-}
-
-nav li a {
-  float: left;
-  display: block;
-  block-size: 100px;
-  text-align: center;
-  padding: 40px 45px;
-  text-decoration: none;
-  transition-duration: 0.4s;
-}
-nav li a:hover {
-  background-color: #72d675;
-}
-
-nav a:link {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-}
-nav a:visited {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-.dropbutton {
-  transition-duration: 0.4s;
-  padding: 0px 30px;
-  block-size: 100px;
-  background-color: #b2d481;
-  font-size: 16px;
-  border: none;
-}
-
-.dropdown {
-  transition-duration: 0.4s;
-  position: relative;
-  display: inline-block;
-  height: 1000px;
-}
-
-.dropdown-content {
-  transition: all 0.5s;
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 140px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbutton {background-color: #72d675}

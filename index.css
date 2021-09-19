@@ -25,17 +25,20 @@ body{
     position: absolute;
     margin-top: 4.5%;
     margin-left: 3%;
+    margin-right: 3%;
     background-color: rgba(22, 22, 22, 0.5);
     padding: 30px 40px;
     border-radius: 10px;
 }
-
+  
 /*------------------ NAV ------------------*/
 nav {
     font-family: Roboto, sans-serif;
     background-color: rgb(178, 212, 129,.85);
     height: 100px;
     width: 100%;
+    font-weight: bolder;
+    z-index: 0;
 }
 
 nav .gametitle {
@@ -68,6 +71,42 @@ nav a:visited {
     color: black;
     text-decoration: none;
 }
+
+.navham {
+    z-index: 1;
+    background-color: #333;
+  }
+  
+
+.navham #myLinks {
+    display: none;
+    color: white;
+}
+
+.navham a {
+    padding: 38px 40px;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+}
+
+.navham a.icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+.navham a:hover {
+    background-color: rgb(119, 209, 122, .6);
+    color: black;
+}
+
+.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
 
 /*------------------ Community Button ------------------*/
 .dropbutton {
@@ -104,6 +143,8 @@ nav a:visited {
 .dropdown:hover .dropbutton {background-color: rgb(119, 209, 122, .6)}
 
 
+
+
 /*------------------ Footer ------------------*/
 footer{
     position: absolute;
@@ -131,7 +172,10 @@ footer a:visited {
 }
 
 /*------------------ Responsiveness ------------------*/
-@media only screen and (max-width: 1000px) { #community{display: none;} }
-@media only screen and (max-width: 860px) { #about{display: none;} }
-@media only screen and (max-width: 720px) { #login{display: none;} }
-@media only screen and (max-width: 550px) { #title{display: none;} }
+/* @media only screen and (max-width: 1000px) { #community{display: none;} } */
+
+@media only screen and (max-width: 1000px) { .navbar {display: none;}}
+@media only screen and (min-width: 1000px) { .navham {display: none;}}
+
+
+/* @media only screen and (max-width: 550px) { #title{display: none;} } */

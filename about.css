@@ -168,7 +168,6 @@ footer a:visited {
 
 a:hover, a:active {
     cursor: pointer;
-    border-radius: 30px;
 }
 
 .outside{

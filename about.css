@@ -115,16 +115,22 @@ footer a:visited {
 }
 
 
+@media(max-width: 500px) {
+    .firstbox, .secondbox, .thirdbox, .fourthbox {
+        width: 10%;
+        height: 10%;
+    }
+}
 
 
 
 
 .firstbox {
     height: 250px;
-    width: 350px;
+    width: 23%;
     background-color:gray;
-    margin-left: 330px;
-    margin-top: 40px;
+    margin-left: 25%;
+    margin-top: 3%;
     float: left;
 
 }
@@ -136,8 +142,8 @@ footer a:visited {
     height: 100px;
     border-radius: 4px;
     position: relative;
-    left: 130px;
-    top: 10px;
+    left: 33%;
+    top: 5%;
 }
 
 .firstbox h1{
@@ -163,10 +169,10 @@ footer a:visited {
 
 .secondbox{
     height: 250px;
-    width: 350px;
+    width: 23%;
     background-color:gray;
-    margin-right: 330px;
-    margin-top: 40px;
+    margin-right: 25%;
+    margin-top: 3%;
     float: right;
 }
 
@@ -177,8 +183,8 @@ footer a:visited {
     height: 100px;
     border-radius: 4px;
     position: relative;
-    left: 130px;
-    top: 10px;
+    left: 33%;
+    top: 5%;
 }
 
 .secondbox h1{
@@ -204,10 +210,10 @@ footer a:visited {
 
 .thirdbox{
     height: 250px;
-    width: 350px;
+    width: 23%;
     background-color: gray;
-    margin-left: 330px;
-    margin-top: 40px;
+    margin-left: 25%;
+    margin-top: 2%;
     float: left;
 }
 
@@ -218,8 +224,8 @@ footer a:visited {
     height: 100px;
     border-radius: 4px;
     position: relative;
-    left: 130px;
-    top: 10px;
+    left: 33%;
+    top: 5%;
 }
 
 .thirdbox h1{
@@ -246,10 +252,10 @@ footer a:visited {
 
 .fourthbox{
     height: 250px;
-    width: 350px;
+    width: 23%;
     background-color: gray;
-    margin-right: 330px; 
-    margin-top: 40px; 
+    margin-right: 25%; 
+    margin-top: 2%; 
     float: right;
 }
 
@@ -260,8 +266,8 @@ footer a:visited {
     height: 100px;
     border-radius: 4px;
     position: relative;
-    left: 130px;
-    top: 10px;
+    left: 33%;
+    top: 5%;
 }
 
 .fourthbox h1{

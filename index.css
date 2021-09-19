@@ -29,6 +29,7 @@ body{
     background-color: rgba(22, 22, 22, 0.5);
     padding: 30px 40px;
     border-radius: 10px;
+    animation: fadeIn 4s;
 }
   
 /*------------------ NAV ------------------*/
@@ -78,28 +79,39 @@ nav a:visited {
   }
   
 
-.navham #myLinks {
-    display: none;
-    color: white;
-}
 
 .navham a {
-    padding: 38px 40px;
+    font-family: Roboto, sans-serif;
+    padding: 40px 40px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 17px;
     display: block;
+}
+
+.navham #myLinks {
+    display: none;
+}
+
+.navham a:link {
+    color: white;
+    text-decoration: none;
+}
+.navham a:visited {
+    color: white;
+    text-decoration: none;
 }
 
 .navham a.icon {
     display: block;
     position: absolute;
+    COLOR: black;
     right: 0;
     top: 0;
-  }
+}
 
 .navham a:hover {
     background-color: rgb(119, 209, 122, .6);
-    color: black;
+    color: white;
 }
 
 .active {
@@ -107,14 +119,15 @@ nav a:visited {
     color: white;
 }
 
-
 /*------------------ Community Button ------------------*/
 .dropbutton {
     transition-duration: 0.4s;
     padding: 0px 30px;
     block-size: 100px;
     background-color: rgb(178, 212, 129, 0);
+    font-weight: bold;
     font-size: 16px;
+    font-family: Roboto, sans-serif;
     border: none;
 }
 .dropdown {
@@ -128,7 +141,7 @@ nav a:visited {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 168px;
+    min-width: 166px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -172,10 +185,11 @@ footer a:visited {
 }
 
 /*------------------ Responsiveness ------------------*/
-/* @media only screen and (max-width: 1000px) { #community{display: none;} } */
-
 @media only screen and (max-width: 1000px) { .navbar {display: none;}}
 @media only screen and (min-width: 1000px) { .navham {display: none;}}
-
-
+/* @media only screen and (max-width: 1000px) { #community{display: none;} } */
 /* @media only screen and (max-width: 550px) { #title{display: none;} } */
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }

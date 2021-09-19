@@ -24,10 +24,6 @@
                 $(".signup").css("background", "#fff");
                 $(".login").css("background", "#d3d3d3");
             });
-
-            $(".btn").click(function(){
-                $(".input").val("");
-            })
         })
     </script>
 </head>
@@ -35,27 +31,108 @@
 <body>
 <div class = "outside">
     <nav>
+        <nav>
+            <ul>
+                <li><a style="float:right;" href="index.html">Home</a></li>
+                <li><a style="float:right;" href="game.html">Play Now</a></li>
+                <li><a style="float:right;" href="about.html">About</a></li>
+                <li class="logged-in" id="logout"><a style="float:right"; href="#">Logout</a></li>
+                <div style="float:right;" class="dropdown">
+                    <button class="dropbutton">Community</button>
+                    <div class="dropdown-content">
+                        <a href="https://www.reddit.com/">Reddit</a>
+                        <a href="https://discord.com/">Discord</a>
+                        <a href="https://www.facebook.com/">Facebook</a>
+                    </div>
+                </div>
+            </ul>
     </nav>
     <body>
         <div class="container">
             <div class="login">Login</div>
             <div class="signup">Sign Up</div>
 
-            <div class="signup-form">
-                <input type="text" placeholder="Enter Username" class="input"><br>
-                <input type="text" placeholder="Enter Email" class="input"> <br>
-                <input type="password" placeholder="Enter Password" class="input">
-                <div class="btn">Create Account</div>
-            </div>
-
-            <div class="login-form">
-                <input type="text" placeholder="Enter Email or Username" class="input"><br>
-                <input type="password" class="input" placeholder="Enter Password"><br>
-                <div class="btn">Login</div> <br>
+            <form class="signup-form">
+                <input id="signup-username" type="text" placeholder="Enter Username" class="input"><br>
+                <input id="signup-email" type="text" placeholder="Enter Email" class="input"> <br>
+                <input id="signup-password" type="password" placeholder="Enter Password" class="input">
+                <button type="submit" class="btn">Create Account</button>
+            </form>
+            <form class="login-form">
+                <input id="login-email" type="text" placeholder="Enter Email" class="input"><br>
+                <input id="login-password" type="password" class="input" placeholder="Enter Password"><br>
+                <button type="submit" class="btn">Login</button>
                 <span><a href="#">Forgot Password?</a></span>
-            </div>
+            </form>
         </div>
 
+
+    <!--FIREBASE STUFF-->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyCOczojAYxMjj7HwhBasYdxmdtjOAD4Kd4",
+          authDomain: "recyclepg-bdd22.firebaseapp.com",
+          projectId: "recyclepg-bdd22",
+          storageBucket: "recyclepg-bdd22.appspot.com",
+          messagingSenderId: "75075945170",
+          appId: "1:75075945170:web:a1138b7a94b591de12a30b",
+          measurementId: "G-Z8M6V7DDPX"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        const signupForm = document.querySelector('.signup-form');
+        signupForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            // get user info
+            const signupEmail = signupForm['signup-email'].value;
+            const signupUsername = signupForm['signup-username'].value;
+            const signupPassword = signupForm['signup-password'].value;
+
+            // sign that user up!
+            const auth = getAuth();
+            createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
+            .then((cred) => {
+                console.log(cred.user);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+        })
+
+        // login
+        const loginForm = document.querySelector('.signup-form');
+        loginForm.addEventListener('submit', (event)=>{
+            event.preventDefault();
+            // get login information
+            const email = loginForm['login-email'].value;
+            const password = loginForm['login-password'].value;
+
+            signInWithEmailAndPassword(auth, email, password)
+            .then((cred) => {
+                console.log("Login Successful");
+            })
+            .catch((error)=>{
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log("Login Failed");
+            });
+        });
+      </script>
+      <!-- <script src="./scripts/auth.js"></script> -->
+      <script src="./scripts/events.js"></script>
     </body>
     <footer>
 

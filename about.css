@@ -88,6 +88,12 @@ nav a:visited {
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropbutton {background-color: #77d17a}
 
+/*------------------ Responsiveness ------------------*/
+@media only screen and (max-width: 1000px) { #community{display: none;} }
+@media only screen and (max-width: 860px) { #about{display: none;} }
+@media only screen and (max-width: 720px) { #login{display: none;} }
+@media only screen and (max-width: 550px) { #title{display: none;} }
+
 
 
 /*------------------ Footer ------------------*/

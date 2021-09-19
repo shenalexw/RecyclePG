@@ -1,4 +1,4 @@
- const firebaseConfig = {
+const firebaseConfig: {
   apiKey: "AIzaSyCOczojAYxMjj7HwhBasYdxmdtjOAD4Kd4",
   authDomain: "recyclepg-bdd22.firebaseapp.com",
   projectId: "recyclepg-bdd22",
@@ -9,4 +9,4 @@
   measurementId: "G-Z8M6V7DDPX"
 };
 
-export default firebaseConfig;
+module.exports = firebaseConfig;

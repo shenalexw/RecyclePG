@@ -14,7 +14,7 @@ Development project to help influence people to recycle more!
 
 ## How To Use
 
-Live Preview: [RecyclePG](recyclepg.github.io/recyclepg/)
+Live Preview: [RecyclePG](https://recyclepg.github.io/RecyclePG/)
 
 ## References
 

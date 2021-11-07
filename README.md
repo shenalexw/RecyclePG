@@ -9,7 +9,7 @@
 ## Abstract
 Project developed for both personal betterment and the Oregon State University Beaverhacks Fall 2021
 
-Development project to help influence people to recycle more!
+This project was created to help influence people to recycle more by creating a game out of it!
 
 Things to note:
 - Login incomplete due to time constraints

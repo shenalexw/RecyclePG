@@ -11,6 +11,10 @@ Project developed for both personal betterment and the beaver hackathon
 
 Development project to help influence people to recycle more!
 
+Things to note:
+- Login incomplete due to time constraints
+- Game page is used to demonstrate user function, but not the experience itself.
+
 
 ## How To Use
 

@@ -7,7 +7,7 @@
 - [Author(s)](#author-info)
 
 ## Abstract
-Project developed for both personal betterment and the beaver hackathon
+Project developed for both personal betterment and the Oregon State University Beaverhacks Fall 2021
 
 Development project to help influence people to recycle more!
 
